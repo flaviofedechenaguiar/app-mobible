@@ -1,4 +1,4 @@
-package config;
+package Config;
 
 public class Config {
     public static final String API_URL = "https://www.abibliadigital.com.br/api/";
