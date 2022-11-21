@@ -21,7 +21,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import config.Config;
+import Config.Config;
 import dtos.BookDTO;
 
 public class BooksService {
