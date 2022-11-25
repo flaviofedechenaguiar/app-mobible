@@ -76,7 +76,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void handleOnItemClick(TextView txtAbbrev, TextView txtChapters, TextView txtName) {
-
+        String abbrev = txtAbbrev.getText().toString();
+        String chapters = txtChapters.getText().toString();
+        String name = txtName.getText().toString();
+        Intent intent = new Intent(MainActivity.this, ChaptersActivity.class);
+        intent.putExtra("abbrev", abbrev);
+        intent.putExtra("chapters", Integer.parseInt(chapters));
+        intent.putExtra("name", name);
+        startActivity(intent);
     }
 
     private void renderListView(ListView listView, List<BookDTO> books) {
