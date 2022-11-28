@@ -43,13 +43,19 @@ public class ChaptersActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-
+                TextView txtChapter = view.findViewById(R.id.txtChapter);
+                handleOnItemClick(txtChapter, abbrev, name);
             }
         });
     }
 
     private void handleOnItemClick(TextView txtChapter, String abbrev, String name) {
-
+        String chapter = txtChapter.getText().toString();
+        Intent intent = new Intent(ChaptersActivity.this, VersesActivity.class);
+        intent.putExtra("chapter", Integer.parseInt(chapter));
+        intent.putExtra("abbrev", abbrev);
+        intent.putExtra("name", name);
+        startActivity(intent);
     }
 
 
